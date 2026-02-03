@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{% block title %} this about page {% endblock %}
+
+{% block content %}
+    <h1>This is about.html from app1</h1>
+    <p>This is the about page content</p>
+    {% regroup students by age as list %}
+    <ul>
+        {% for age_group in list %}
+            <li>Age: {{ age_group.grouper }}
+                <ul>
+                    {% for student in age_group.list %}
+                        <li>{{ student.name|upper }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+
+        
+         <p>Percentage : {% widthratio 50 100 100 %}%</p>
+         
+            {% spaceless %}
+                <p>
+                    This    is    spaced    out    text.
+                </p>
+            {% endspaceless %}
+
+
+
+{% endblock %}

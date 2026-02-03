@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row-even { background-color: lightblue; }
+        .row-odd { background-color: lightgreen; }
+    </style>
+</head>
+<body>
+    <h1>{{message}}</h1>
+    <h3>Name = {{developer.name}}</h3>
+    <h3>Age = {{developer.age}}</h3>
+    <p>{{empty_value|default:"No data"}}</p>
+    <p>{{empty_value|default_if_none:"No Object"}}</p>
+    <p>{{bold_p_tag|safe}}</p>
+    <p>{{title|upper}}</p>
+    <p>{{title|lower}}</p>
+    <p>{{title|title}}</p>
+    <p>{{title|truncatechars:20}}</p>
+    <p>{{title|truncatewords:2}}</p>
+    <p>Line Break {{title|linebreaks}}</p>
+
+    <hr>
+
+    <p>{{number}} + 5 = {{number|add:5}}</p>
+    <p>{{number}} -5 = {{number|add:-5}}</p>
+
+    {% if number|divisibleby:2%} 
+        <p>{{number}} is Even</p>
+    {% else %}
+        <P>{{number}} is odd</P>
+
+    {%endif%}
+
+    <hr>
+    <p>Current Date and Time: {{current_date}}</p>
+    <p>first {{my_list|first}}</p>
+    <p>last {{my_list|last}}</p>
+    <p>slice {{my_list|slice:":2"}}</p>
+    <p>join {{my_list|join:"--"}}</p>
+
+    <hr>
+    <p>{{empty_value|yesno:"Yes,No,Maybe"}}</p>
+    <p>number{{number|pluralize}}</p>
+
+    <hr>
+   <ul>
+    {% for item in blogs %}
+        <li>{{forloop.counter}}. {{item.id}}, {{item.title}}, {{item.content}}
+        </li>
+        {%empty%}
+        <li>No Blogs Available</li>
+        
+       
+    {% endfor %}
+     {% with total_blogs=blogs|length%}
+        <li>Total Blogs: {{total_blogs}}</li>
+        {% endwith %}
+   </ul>
+
+   <!-- talble -->
+    <table border="1">
+     <thead>
+          <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+          </tr>
+     </thead>
+     <tbody>
+          {% for item in blogs %}
+          <tr class="{% cycle 'row-even' 'row-odd' %}">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.content}}</td>
+          </tr>
+          {% empty %}
+          <tr>
+                <td colspan="3">No Blogs Available</td>
+          </tr>
+          {% endfor %}
+     </tbody>
+    </table>
+
+    {%verbatim%}
+    <p>Current Date and Time: {{current_date}}</p>
+
+    {%endverbatim%}
+
+    {%autoescape off%}
+    <p>{{bold_p_tag}}</p>
+    {%endautoescape%}
+
+</body>
+</html>

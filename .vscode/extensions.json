@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "batisteo.vscode-django",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "ms-vscode.vscode-css-peek",
+        "zignd.html-css-class-completion",
+        "ecmel.vscode-html-css"
+    ]
+}

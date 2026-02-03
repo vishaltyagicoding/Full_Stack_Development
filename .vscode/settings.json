@@ -1,0 +1,49 @@
+{
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.tabCompletion": "on",
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.inlineSuggest.enabled": true,
+    "editor.suggest.insertMode": "insert",
+    "editor.suggest.showKeywords": true,
+    "editor.suggest.showSnippets": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.clearBeforeExecuting": true,
+    "terminal.integrated.fontSize": 16,
+    "workbench.colorCustomizations": {
+        "terminal.foreground": "#00ff00",
+        "terminal.background": "#000000"
+    },
+    "python.defaultInterpreterPath": "./myvenv/Scripts/python.exe",
+    "python.analysis.extraPaths": ["./myvenv/Lib/site-packages"],
+    "html.suggest.html5": true,
+    "html.autoClosingTags": true,
+    "html.completion.attributeDefaultValue": "doublequotes",
+    "css.validate": true,
+    "css.lint.unknownProperties": "warning",
+    "javascript.suggest.autoImports": true,
+    "typescript.suggest.autoImports": true,
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "[html]": {
+        "editor.suggest.insertMode": "insert",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        }
+    }
+}
